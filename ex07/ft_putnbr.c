@@ -6,7 +6,7 @@
 /*   By: manavarr <manavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 20:41:43 by manavarr          #+#    #+#             */
-/*   Updated: 2022/03/22 14:46:21 by manavarr         ###   ########.fr       */
+/*   Updated: 2022/03/24 23:19:16 by manavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,23 @@ void	ft_write(int c)
 
 void	ft_putnbr(int nb)
 {
-	if (nb < 0)
+	if (nb == -2147483648 && nb < 0)
 	{
 		ft_write('-');
-		nb *= -1;
+		ft_write('2');
+		write(1, "147483648", 9);
 	}
-	if (nb > 10)
+	else
 	{
-		ft_putnbr(nb / 10);
+		if (nb < 0)
+		{
+			ft_write('-');
+			nb *= -1;
+		}
+		if (nb > 10)
+		{
+			ft_putnbr(nb / 10);
+		}
+		ft_write((nb % 10) + '0');
 	}
-	ft_write((nb % 10) + '0');
 }

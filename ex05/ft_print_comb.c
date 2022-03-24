@@ -6,7 +6,7 @@
 /*   By: manavarr <manavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 14:49:50 by manavarr          #+#    #+#             */
-/*   Updated: 2022/03/21 18:17:40 by manavarr         ###   ########.fr       */
+/*   Updated: 2022/03/22 17:33:07 by manavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ void	ft_print_comb(void)
 				ft_print(a, b, c);
 				if (a < '7')
 					write(1, ", ", 2);
-				else
-					write(1, ".", 1);
 				c++;
 			}
 			b++;
